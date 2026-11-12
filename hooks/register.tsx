@@ -103,7 +103,7 @@ function openPane($: Engine) {
 
 export const register: Register = (on, options) => {
   refreshMs = num(options.refreshSeconds, 5) * 1000
-  cacheTtlMs = num(options.cacheTtlMinutes, 5) * 60_000
+  cacheTtlMs = num(options.cacheTtlMinutes, 60) * 60_000
 
   on('session.start', async ($, e, next) => {
     try {
@@ -291,9 +291,15 @@ export const register: Register = (on, options) => {
 
       if (m.lastStepAt !== null) {
         const left = cacheTtlMs - (now - m.lastStepAt)
+        const label =
+          left >= 60_000 ? `${Math.floor(left / 60_000)}m` : `${Math.max(1, Math.ceil(left / 1000))}s`
         rows.push(
           left > 0
-            ? [{ text: `cache ${Math.max(1, Math.ceil(left / 60_000))}m`, color: 'green' }]
+            ? [
+                { text: 'cache ' },
+                { text: label, color: left > 5 * 60_000 ? 'green' : 'yellow' },
+                ...(withReset ? [{ text: ` ↻${clock(m.lastStepAt + cacheTtlMs)}`, dim: true }] : []),
+              ]
             : [{ text: 'cache fría', color: 'red', dim: true }],
         )
       }

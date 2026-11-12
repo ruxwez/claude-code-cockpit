@@ -5,7 +5,7 @@ Cockpit para Claude Code: una barra encima del prompt con colores y barras de pr
 **Barra** (se refresca cada `refreshSeconds`, por defecto 5 s, y al terminar cada turno):
 
 ```
-◆ Opus 5.5 (medium) │ ctx ▕████░░░░░░▏ 42% │ 5h ▕██░░░░░░▏ 23% ↻18:40 │ sem ▕█░░░░░░░▏ 12% ↻lun 09:00 │ cache 3m │ $1.23 API
+◆ Opus 5.5 (medium) │ ctx ▕████░░░░░░▏ 42% │ 5h ▕██░░░░░░▏ 23% ↻18:40 │ sem ▕█░░░░░░░▏ 12% ↻lun 09:00 │ cache 57m ↻14:32 │ $1.23 API
 ```
 
 - Verde < 50 %, amarillo < 80 %, rojo ≥ 80 %.
@@ -27,7 +27,7 @@ El plugin se llama `code-cockpit` porque Claude Code reserva los nombres que emp
 | Opción | Por defecto | Qué hace |
 | --- | --- | --- |
 | `refreshSeconds` | 5 | Cada cuántos segundos se actualiza la barra |
-| `cacheTtlMinutes` | 5 | Minutos que la caché de prompts se considera caliente |
+| `cacheTtlMinutes` | 60 | Minutos que la caché de prompts sigue caliente (60 en Pro/Max, 5 con API key) |
 
 ## Desarrollo
 

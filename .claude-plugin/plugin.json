@@ -13,8 +13,8 @@
     "cacheTtlMinutes": {
       "type": "number",
       "title": "TTL de la caché (minutos)",
-      "description": "Minutos que se considera caliente la caché de prompts tras la última petición al modelo.",
-      "default": 5
+      "description": "Minutos que la caché de prompts sigue caliente tras la última petición (60 en suscripciones Pro/Max, 5 con API key).",
+      "default": 60
     }
   }
 }
