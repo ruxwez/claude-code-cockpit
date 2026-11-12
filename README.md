@@ -17,7 +17,7 @@ Cockpit para Claude Code: una barra encima del prompt con colores y barras de pr
 ## Instalación
 
 ```
-/plugin install code-cockpit --marketplace ruxwez/claude-status-line-plugin
+/plugin install code-cockpit --marketplace ruxwez/claude-code-cockpit
 ```
 
 El plugin se llama `code-cockpit` porque Claude Code reserva los nombres que empiezan por `claude-`.
