@@ -1,0 +1,11 @@
+{
+  "name": "claude-code-cockpit",
+  "owner": { "name": "ruxwez" },
+  "plugins": [
+    {
+      "name": "code-cockpit",
+      "source": "./",
+      "description": "Cockpit para Claude Code: barra con modelo, contexto, límites, caché y coste API, más un diálogo de analíticas de la sesión."
+    }
+  ]
+}

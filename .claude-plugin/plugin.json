@@ -1,0 +1,20 @@
+{
+  "name": "code-cockpit",
+  "version": "0.1.0",
+  "description": "Cockpit: barra de estado (modelo, contexto, límites, caché, coste) y diálogo de analíticas de la sesión.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "refreshSeconds": {
+      "type": "number",
+      "title": "Refresco (segundos)",
+      "description": "Cada cuántos segundos se actualiza la barra con el uso de la sesión.",
+      "default": 5
+    },
+    "cacheTtlMinutes": {
+      "type": "number",
+      "title": "TTL de la caché (minutos)",
+      "description": "Minutos que se considera caliente la caché de prompts tras la última petición al modelo.",
+      "default": 5
+    }
+  }
+}
